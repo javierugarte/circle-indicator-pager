@@ -1,6 +1,6 @@
 Circle Indicator pager
 =======
-
+[ ![Download](https://api.bintray.com/packages/javiergm/maven/CircleIndicatorPager/images/download.svg) ](https://bintray.com/javiergm/maven/CircleIndicatorPager/_latestVersion)
 
 ## Download
 - Using Gradle
