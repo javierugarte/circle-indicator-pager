@@ -40,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (indicator != null) {
             indicator.setViewPager(viewPager);
-
-            indicator.configureIndicator();
         }
 
     }
