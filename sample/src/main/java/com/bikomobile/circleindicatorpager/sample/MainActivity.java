@@ -14,22 +14,9 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.bikomobile.circleindicatorpager.CircleIndicatorPager;
+
 public class MainActivity extends AppCompatActivity {
-
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +27,22 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
+
+        if (viewPager != null) {
+            viewPager.setAdapter(sectionsPagerAdapter);
+        }
+
+        CircleIndicatorPager indicator = (CircleIndicatorPager) findViewById(R.id.circle_indicator_pager);
+
+        if (indicator != null) {
+            indicator.setViewPager(viewPager);
+
+            indicator.configureIndicator();
+        }
 
     }
 
